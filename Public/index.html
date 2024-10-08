@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yasser's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Style of the Page-->
+    <style>
+      /* Custom styles */
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      /* Floating animation for the image */
+      .animate-float {
+        animation: float 4s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-30px);
+        }
+      }
+
+      .animation-slow-appear {
+        animation: slowappear 1s ease-in-out;
+      }
+      @keyframes slowappear {
+        0% {
+          opacity: 0;
+          transform: translateY(200px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 text-gray-900">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <!-- Logo on the left -->
+        <div class="text-2xl font-bold text-blue-600">Yasser</div>
+
+        <!-- Hamburger Icon for Mobile (Hidden on Desktop) -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-gray-600 focus:outline-none">
+            <!-- You can replace this span with your SVG icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <ul id="nav-links" class="hidden md:flex space-x-6">
+          <li>
+            <a
+              href="#about"
+              class="text-gray-600 hover:text-blue-600 font-semibold transition-colors duration-300"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#services"
+              class="text-gray-600 hover:text-blue-600 font-semibold transition-colors duration-300"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="text-gray-600 hover:text-blue-600 font-semibold transition-colors duration-300"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="text-gray-600 hover:text-blue-600 font-semibold transition-colors duration-300"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden bg-white shadow-lg">
+        <ul class="space-y-6 p-4">
+          <li>
+            <a
+              href="#about"
+              class="block text-gray-600 hover:text-blue-600 font-semibold transition-colors duration-300"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#services"
+              class="block text-gray-600 hover:text-blue-600 font-semibold transition-colors duration-300"
+              >Services</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="block text-gray-600 hover:text-blue-600 font-semibold transition-colors duration-300"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="block text-gray-600 hover:text-blue-600 font-semibold transition-colors duration-300"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="min-h-screen flex items-center justify-center py-20 bg-gray-100"
+    >
+      <div
+        class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10"
+      >
+        <!-- Left Side: Image with floating animation and margin -->
+        <div class="flex justify-center mt-12 md:mt-0 animate-float">
+          <img
+            src="images/Yasser's photo.png"
+            alt="Yasser's Image"
+            class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-md"
+          />
+        </div>
+        <!-- Right Side: Text -->
+        <div class="flex flex-col justify-center space-y-6">
+          <h1 class="text-4xl font-bold">Hello, I'm Yasser Abdechafik,</h1>
+          <h2 class="text-4xl font-bold">
+            a <span class="text-blue-500" id="profession"></span>
+          </h2>
+          <p class="text-lg text-gray-600">
+            I am a passionate and versatile software developer with a deep
+            knowledge of full-stack development, DevOps practices, and network
+            engineering. My experience spans across system administration, cloud
+            platforms, containerization, and automation. With a solid background
+            in cybersecurity, I am dedicated to building secure and scalable
+            solutions. Let’s work together to bring innovative ideas to life!
+          </p>
+          <!-- Action Links -->
+          <div class="flex flex-wrap space-x-4 mt-4">
+            <!-- Download CV Button -->
+            <a
+              href="Yasser Abdechafik CV_dev.pdf"
+              download
+              class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition shadow-md"
+            >
+              Download CV
+            </a>
+            <!-- My Projects Button -->
+            <a
+              href="#projects"
+              class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition shadow-md"
+            >
+              My Projects
+            </a>
+            <!-- Social Icons -->
+            <div class="flex space-x-4 mt-2">
+              <!-- LinkedIn -->
+              <a
+                href="https://www.linkedin.com/in/abdechafik-yasser-72a87623b/"
+                target="_blank"
+                class="text-gray-500 hover:text-blue-500 transition"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M22.23 0H1.77C.792 0 0 .772 0 1.722v20.556C0 23.228.792 24 1.77 24h20.46c.977 0 1.77-.772 1.77-1.722V1.722C24 .772 23.207 0 22.23 0zM7.064 20.452H3.648V9h3.416v11.452zM5.356 7.617c-1.094 0-1.977-.888-1.977-1.983s.883-1.983 1.977-1.983 1.977.888 1.977 1.983-.883 1.983-1.977 1.983zm14.607 12.835h-3.417V14.29c0-1.469-.526-2.471-1.842-2.471-.998 0-1.592.67-1.854 1.315-.095.234-.118.556-.118.88v6.44H9.325V9h3.283v1.561h.048c.448-.762 1.44-1.848 2.957-1.848 2.158 0 3.763 1.398 3.763 4.407v7.332z"
+                  />
+                </svg>
+              </a>
+              <!-- GitHub -->
+              <a
+                href="https://github.com/blowsthunder"
+                target="_blank"
+                class="text-gray-500 hover:text-gray-900 transition"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 .296c-6.63 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.016-2.04-3.338.726-4.042-1.612-4.042-1.612-.546-1.386-1.333-1.756-1.333-1.756-1.089-.744.084-.729.084-.729 1.205.084 1.839 1.236 1.839 1.236 1.07 1.835 2.807 1.305 3.492.998.108-.775.418-1.305.762-1.605-2.665-.305-5.467-1.335-5.467-5.93 0-1.31.469-2.381 1.235-3.221-.123-.304-.536-1.527.117-3.176 0 0 1.008-.322 3.301 1.23a11.51 11.51 0 013.003-.403c1.019.005 2.045.138 3.003.403 2.292-1.552 3.297-1.23 3.297-1.23.655 1.649.243 2.872.12 3.176.77.84 1.234 1.911 1.234 3.221 0 4.607-2.807 5.622-5.479 5.921.43.371.823 1.102.823 2.222 0 1.606-.015 2.901-.015 3.293 0 .323.217.696.825.578C20.565 22.092 24 17.592 24 12.296c0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+              </a>
+              <!-- YouTube -->
+              <a
+                href="https://www.youtube.com/channel/UCwgSTo1lGtyoaY8G8r9hFcQ"
+                target="_blank"
+                class="text-gray-500 hover:text-red-500 transition"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M23.498 6.186a3.008 3.008 0 00-2.12-2.125C19.43 3.429 12 3.429 12 3.429s-7.43 0-9.377.632a3.008 3.008 0 00-2.12 2.125C0 8.142 0 12.001 0 12.001s0 3.86.503 5.814a3.008 3.008 0 002.12 2.125c1.947.632 9.377.632 9.377.632s7.43 0 9.377-.632a3.008 3.008 0 002.12-2.125C24 15.861 24 12.001 24 12.001s0-3.86-.502-5.814zM9.545 15.568V8.433l6.51 3.568-6.51 3.568z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section
+      id="services"
+      class="min-h-screen flex items-center justify-center py-20 bg-white"
+    >
+      <div class="container mx-auto px-4">
+        <!-- Section Title -->
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">My Services</h2>
+          <p class="text-gray-600">
+            I offer a wide range of services to bring your ideas to life, from
+            developing web applications to maintaining system infrastructure.
+          </p>
+        </div>
+        <!-- Service Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Full Stack Developer Card -->
+          <div
+            class="bg-white shadow-lg rounded-lg p-6 text-center hover:shadow-xl animation-slow-appear"
+          >
+            <div class="flex justify-center mb-4">
+              <img
+                src="images/laptop.png"
+                alt="full-stack-developper_icon"
+                class="h-52 w-52"
+              />
+            </div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              Full Stack Developer
+            </h3>
+            <!-- Tags -->
+            <div class="flex flex-wrap justify-center space-x-2 mb-4">
+              <span
+                class="bg-indigo-100 text-indigo-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >PHP</span
+              >
+              <span
+                class="bg-red-100 text-red-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >Laravel</span
+              >
+              <span
+                class="bg-blue-100 text-blue-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >React.js</span
+              >
+              <span
+                class="bg-green-100 text-green-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >Node.js</span
+              >
+              <span
+                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >JavaScript</span
+              >
+              <span
+                class="bg-gray-100 text-gray-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >Python</span
+              >
+              <span
+                class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                >MySQL</span
+              >
+            </div>
+
+            <p class="text-gray-600 mb-6">
+              I develop dynamic, responsive web applications using technologies
+              like Laravel, React, Node.js, and more, to ensure both the front
+              and back end work seamlessly together.
+            </p>
+          </div>
+
+          <!-- App developper Card -->
+          <div
+            class="bg-white shadow-lg rounded-lg p-6 text-center hover:shadow-xl animation-slow-appear"
+          >
+            <div class="flex justify-center mb-4">
+              <img
+                src="images/app-development.png"
+                alt="android-studio-developer_icon"
+                class="h-52 w-52"
+              />
+            </div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              Android Studio Developer
+            </h3>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap justify-center space-x-2 mb-4">
+              <span
+                class="bg-green-100 text-green-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >Android Studio</span
+              >
+              <span
+                class="bg-green-100 text-green-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >Kotlin</span
+              >
+              <span
+                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >Java</span
+              >
+              <span
+                class="bg-blue-100 text-blue-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >Firebase</span
+              >
+            </div>
+
+            <p class="text-gray-600 mb-6">
+              As an Android Studio developer, I build feature-rich mobile
+              applications using Kotlin and Java, ensuring smooth performance
+              and responsive design. I specialize in integrating modern
+              libraries and tools like Firebase for seamless cloud integration.
+            </p>
+          </div>
+
+          <!-- System administrator Card -->
+          <div
+            class="bg-white shadow-lg rounded-lg p-6 text-center hover:shadow-xl animation-slow-appear"
+          >
+            <div class="flex justify-center mb-4">
+              <img
+                src="images/administrator.png"
+                alt="full-stack-developper_icon"
+                class="h-52 w-52"
+              />
+            </div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              System Administrator
+            </h3>
+            <!-- Tags -->
+            <div class="flex flex-wrap justify-center space-x-2 mb-4">
+              <span
+                class="bg-indigo-100 text-indigo-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >Lunix administrator</span
+              >
+              <span
+                class="bg-indigo-100 text-indigo-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >vSphere Administrator</span
+              >
+            </div>
+
+            <p class="text-gray-600 mb-6">
+              I develop dynamic, responsive web applications using technologies
+              like Laravel, React, Node.js, and more, to ensure both the front
+              and back end work seamlessly together.
+            </p>
+          </div>
+
+          <!-- DevOps Card -->
+          <div
+            class="bg-white shadow-lg rounded-lg p-6 text-center hover:shadow-xl animation-slow-appear"
+          >
+            <div class="flex justify-center mb-4">
+              <img
+                src="images/DevOps.png"
+                alt="DevOps Engineer Icon"
+                class="h-52 w-52"
+              />
+            </div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+              DevOps Engineer
+            </h3>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap justify-center space-x-2 mb-4">
+              <span
+                class="bg-blue-100 text-blue-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >Docker</span
+              >
+              <span
+                class="bg-blue-100 text-blue-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >Kubernetes</span
+              >
+              <span
+                class="bg-purple-100 text-purple-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >Ansible</span
+              >
+              <span
+                class="bg-green-100 text-green-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >Git</span
+              >
+              <span
+                class="bg-green-100 text-green-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >GitHub</span
+              >
+              <span
+                class="bg-yellow-100 text-yellow-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >Chef</span
+              >
+              <span
+                class="bg-orange-100 text-orange-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                >Terraform</span
+              >
+            </div>
+
+            <p class="text-gray-600 mb-6">
+              As a DevOps engineer, I bridge the gap between development and
+              operations, automating processes and ensuring continuous
+              integration and delivery. I utilize tools such as Docker,
+              Kubernetes, and Ansible to streamline workflows and enhance system
+              reliability and scalability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="min-h-screen py-20 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <!-- Section Title -->
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">My Projects</h2>
+          <p class="text-gray-600">
+            Here are some of the projects I’ve worked on, showcasing my skills
+            and expertise in full stack development.
+          </p>
+        </div>
+
+        <!-- Project Card -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- E-commerce Website Project -->
+          <div
+            class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition relative"
+          >
+            <!-- Project Image -->
+            <img
+              src="images/E-commerce website medium screen.png"
+              alt="E-commerce Website Screenshot"
+              class="w-full h-48 object-cover"
+            />
+
+            <div
+              class="absolute top-0 right-0 bg-green-500 text-white px-4 py-1 text-xs font-semibold rounded-bl-lg"
+            >
+              Personal Project
+            </div>
+
+            <!-- Project Content -->
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-gray-800 mb-2">
+                Comprehensive E-Commerce Platform
+              </h3>
+              <p class="text-gray-600 mb-3">
+                Duration:
+                <span class="font-semibold"
+                  >June 2023 - December 2023 (6 months)</span
+                >
+              </p>
+              <p class="text-gray-600 mb-4">
+                A highly scalable, feature-rich E-commerce platform with over 30
+                fully responsive pages. It includes user authentication, dynamic
+                product listings, an integrated shopping cart, and secure
+                checkout. The administration panel offers full control over
+                products, users, and orders, while both guests and registered
+                users can shop. Users can track their orders through a dedicated
+                profile panel.
+              </p>
+
+              <!-- Tags -->
+              <div class="flex flex-wrap space-x-2 mb-4">
+                <span
+                  class="bg-indigo-100 text-indigo-800 text-xs font-semibold mb-1 mr-2 px-2.5 py-0.5 rounded"
+                  >PHP</span
+                >
+                <span
+                  class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >MySQL</span
+                >
+                <span
+                  class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >Laravel</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >Vue.js</span
+                >
+              </div>
+
+              <!-- Watch Video Button -->
+              <a
+                href="https://yourvideo-link.com"
+                target="_blank"
+                class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition font-semibold"
+              >
+                Watch Video
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition relative"
+          >
+            <!-- Project Image -->
+            <img
+              src="images/X O project.png"
+              alt="Tic Tac Toe AI Screenshot"
+              class="w-full h-48 object-cover"
+            />
+            <div
+              class="absolute top-0 right-0 bg-green-500 text-white px-4 py-1 text-xs font-semibold rounded-bl-lg"
+            >
+              Personal Project
+            </div>
+            <!-- Project Content -->
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-gray-800 mb-2">
+                AI-Powered Tic Tac Toe Game
+              </h3>
+              <p class="text-gray-600 mb-4">
+                A machine learning project where I developed an artificial
+                intelligence that plays Tic Tac Toe. The AI is designed using
+                advanced algorithms, allowing it to strategize and never lose,
+                providing an engaging experience for players.
+              </p>
+
+              <!-- Tags -->
+              <div class="flex flex-wrap space-x-2 mb-4">
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >Python</span
+                >
+                <span
+                  class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >Machine Learning</span
+                >
+                <span
+                  class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >AI</span
+                >
+              </div>
+
+              <!-- GitHub Link -->
+              <div class="flex flex-col">
+                <a
+                  href="https://github.com/YasserAbdechafik/tic-tac-toe-ai"
+                  target="_blank"
+                  class="text-blue-500 font-semibold hover:underline"
+                >
+                  View on GitHub
+                </a>
+                <a
+                  href="https://github.com/YasserAbdechafik/tic-tac-toe-ai"
+                  target="_blank"
+                  class="text-blue-500 font-semibold hover:underline"
+                >
+                  Play Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition relative"
+          >
+            <!-- Project Image -->
+            <img
+              src="images/tenzies project.png"
+              alt="Tenzies Game Screenshot"
+              class="w-full h-48 object-cover"
+            />
+            <div
+              class="absolute top-0 right-0 bg-green-500 text-white px-4 py-1 text-xs font-semibold rounded-bl-lg"
+            >
+              Personal Project
+            </div>
+            <!-- Project Content -->
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-gray-800 mb-2">
+                Tenzies Game Built with React
+              </h3>
+              <p class="text-gray-600 mb-4">
+                A fun and interactive dice game built using React. Players roll
+                the dice and try to get all of them to show the same number. The
+                app includes state management and an engaging user interface.
+              </p>
+
+              <!-- Tags -->
+              <div class="flex flex-wrap space-x-2 mb-4">
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >React</span
+                >
+                <span
+                  class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >JavaScript</span
+                >
+                <span
+                  class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >CSS</span
+                >
+              </div>
+
+              <!-- GitHub Link -->
+              <div class="h-full w-auto">
+                <div class="flex flex-col ">
+                  <a
+                  href="https://github.com/blowsthunder/tenzies_by_yasser/"
+                  target="_blank"
+                  class="text-blue-500 font-semibold hover:underline"
+                >
+                  View on GitHub
+                </a>
+                <a
+                  href="https://github.com/YasserAbdechafik/tic-tac-toe-ai"
+                  target="_blank"
+                  class="text-blue-500 font-semibold hover:underline"
+                >
+                  Play Now
+                </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio Project Card -->
+          <div
+            class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition relative"
+          >
+            <!-- Project Image -->
+            <img
+              src="images/portfolio website.png"
+              alt="Portfolio Website Screenshot"
+              class="w-full h-48 object-cover"
+            />
+            <div
+              class="absolute top-0 right-0 bg-green-500 text-white px-4 py-1 text-xs font-semibold rounded-bl-lg"
+            >
+              Personal Project
+            </div>
+            <!-- Project Content -->
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-gray-800 mb-2">
+                Personal Portfolio Website
+              </h3>
+              <p class="text-gray-600 mb-4">
+                This dynamic and responsive portfolio website is built using
+                Tailwind CSS and JavaScript to showcase my projects and skills.
+                The site is deployed with a fully integrated CI/CD pipeline
+                using Git and Firebase, ensuring seamless updates and continuous
+                delivery.
+              </p>
+
+              <!-- Tags -->
+              <div class="flex flex-wrap space-x-2 mb-4">
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >Tailwind CSS</span
+                >
+                <span
+                  class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >JavaScript</span
+                >
+                <span
+                  class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >Git</span
+                >
+                <span
+                  class="bg-orange-100 text-orange-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >CI/CD</span
+                >
+                <span
+                  class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >Firebase</span
+                >
+              </div>
+
+              <!-- View Live Link -->
+              <a
+                href="#"
+                target="_blank"
+                class="text-blue-500 font-semibold hover:underline"
+              >
+                View Live Website
+              </a>
+            </div>
+          </div>
+
+          <!-- Teach Assist Project Card -->
+          <div
+            class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition relative"
+          >
+            <!-- Project Image -->
+            <img
+              src="images/mobile application.png"
+              alt="Teach Assist Mobile App Screenshot"
+              class="w-full h-48 object-contain"
+            />
+            <div
+              class="absolute top-0 right-0 bg-orange-500 text-white px-4 py-1 text-xs font-semibold rounded-bl-lg"
+            >
+              Academic Project
+            </div>
+            <!-- Project Content -->
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-gray-800 mb-2">
+                Teach Assist Mobile Application
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Teach Assist is a mobile application built using Android Studio
+                and Kotlin, designed for teachers to manage student records.
+                Teachers can create accounts, add students, input grades, and
+                the app automatically calculates final marks. The app also
+                features advanced animations to enhance user experience.
+              </p>
+
+              <!-- Tags -->
+              <div class="flex flex-wrap space-x-2 mb-4">
+                <span
+                  class="bg-purple-100 text-purple-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >Android Studio</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >Kotlin</span
+                >
+                <span
+                  class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >Animations</span
+                >
+                <span
+                  class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >Student Management</span
+                >
+              </div>
+
+              <!-- View Video Link -->
+              <a
+                href="https://github.com/blowsthunder/Teach_Assist_Project_mobile.git"
+                target="_blank"
+                class="text-blue-500 font-semibold hover:underline"
+              >
+                View On GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- SEO and Developer Internship Card -->
+          <div
+            class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition relative"
+          >
+            <img
+              src="images/SEO project.png"
+              alt="Teach Assist Mobile App Screenshot"
+              class="w-full h-48 object-cover"
+            />
+            <!-- Ticket Label -->
+            <div
+              class="absolute top-0 right-0 bg-red-500 text-white px-4 py-1 text-xs font-semibold rounded-bl-lg"
+            >
+              Internship
+            </div>
+
+            <!-- Internship Content -->
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-gray-800 mb-2">
+                SEO and Developer Internship at Referencement Maroc
+              </h3>
+              <p class="text-gray-600 mb-3">
+                Duration:
+                <span class="font-semibold"
+                  >June 2024 - August 2024 (2 months)</span
+                >
+              </p>
+              <p class="text-gray-600 mb-4">
+                I worked as a SEO specialist and developer during a 2-month
+                internship at
+                <a
+                  href="https://referencement-maroc.ma/"
+                  class="text-blue-500 hover:underline"
+                  target="_blank"
+                  >Referencement Maroc</a
+                >. My responsibilities included optimizing the site for search
+                engines, improving rankings, and enhancing the overall user
+                experience to increase traffic for a client website
+                (3stelecom.ma).
+              </p>
+
+              <!-- Tags -->
+              <div class="flex flex-wrap space-x-2 mb-4">
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >SEO</span
+                >
+                <span
+                  class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >Web Development</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded"
+                  >Google Analytics</span
+                >
+              </div>
+
+              <!-- Google Search Button -->
+              <a
+                href="https://www.google.com/search?q=installation+fibre+optique+casablanca"
+                target="_blank"
+                class="text-blue-500 font-semibold hover:underline"
+              >
+                Search: Installation Fibre Optique Casablanca
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="min-h-screen flex items-center justify-center py-20 bg-gray-100"
+    >
+      <div class="container mx-auto px-4">
+        <!-- Section Title -->
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Contact Me</h2>
+          <p class="text-gray-600">
+            Feel free to reach out to me for any project inquiries or
+            collaborations.
+          </p>
+        </div>
+
+        <!-- Contact Information & Form -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Left Side: Contact Info -->
+          <div class="flex flex-col justify-center items-center text-center">
+            <p class="text-gray-600 text-lg mb-6">
+              You can email me directly at:
+              <a
+                href="mailto:yasser@example.com"
+                class="text-blue-500 underline"
+                >yasser@example.com</a
+              >
+            </p>
+
+            <p class="text-gray-600 text-lg mb-4">
+              Or connect with me on social media:
+            </p>
+
+            <!-- Social Media Icons -->
+            <div class="flex space-x-6">
+              <a
+                href="https://www.linkedin.com/in/yasser"
+                target="_blank"
+                class="text-gray-600 hover:text-blue-500 transition"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-8 h-8"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19.5 3h-15C3.673 3 3 3.673 3 4.5v15C3 20.327 3.673 21 4.5 21h15c.827 0 1.5-.673 1.5-1.5v-15C21 3.673 20.327 3 19.5 3zm-11 15h-3v-9h3v9zm-1.5-10.5c-.828 0-1.5-.672-1.5-1.5S6.172 5.5 7 5.5s1.5.672 1.5 1.5S7.828 7.5 7 7.5zm11.5 10.5h-3v-4.5c0-.828-.672-1.5-1.5-1.5s-1.5.672-1.5 1.5V18h-3v-9h3v1.152c.675-.727 1.665-1.152 2.5-1.152 2.071 0 3.5 1.429 3.5 3.5V18z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/YasserAbdechafik"
+                target="_blank"
+                class="text-gray-600 hover:text-black transition"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-8 h-8"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 .5C5.375.5 0 5.875 0 12.5c0 5.3 3.438 9.787 8.205 11.387.6.112.82-.262.82-.587 0-.287-.012-1.237-.012-2.237-3.013.637-3.662-1.462-3.662-1.462-.525-1.337-1.275-1.687-1.275-1.687-1.038-.712.075-.7.075-.7 1.15.088 1.75 1.2 1.75 1.2 1.013 1.75 2.662 1.237 3.313.938.1-.75.4-1.237.713-1.537-2.4-.275-4.925-1.2-4.925-5.337 0-1.187.425-2.163 1.2-2.938-.112-.275-.512-1.4.1-2.925 0 0 1-.325 3.275 1.225.95-.262 1.963-.388 2.975-.388s2.025.125 2.975.387c2.275-1.55 3.275-1.225 3.275-1.225.613 1.525.213 2.65.1 2.925.775.775 1.2 1.75 1.2 2.937 0 4.15-2.537 5.062-4.95 5.325.413.362.763 1.087.763 2.2 0 1.587-.012 2.863-.012 3.262 0 .325.213.7.825.587C20.562 22.287 24 17.8 24 12.5 24 5.875 18.625.5 12 .5z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.youtube.com/channel/Yasser"
+                target="_blank"
+                class="text-gray-600 hover:text-red-500 transition"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-8 h-8"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M19.615 3.184A4.883 4.883 0 0016.65 2.13C14.28 2 12.005 2 12.005 2h-.008s-2.275 0-4.646.13a4.882 4.882 0 00-2.965 1.054C3.268 4.165 3 6.204 3 6.204S3 8.678 3 11.153v1.694c0 2.475.268 4.015.385 4.969.197 1.78 1.17 3.028 2.924 3.222 2.384.155 9.692.155 9.692.155s2.275 0 4.646-.13a4.882 4.882 0 002.965-1.054c1.424-1.21 1.693-3.25 1.693-3.25s.004-2.475.004-4.951V11.153c0-2.475-.004-4.951-.004-4.951s-.268-2.04-1.693-3.25zM9.608 14.903V9.304l5.417 2.802-5.417 2.797z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Side: Contact Form -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <form action="#" method="POST">
+              <div class="mb-4">
+                <label
+                  for="name"
+                  class="block text-gray-700 text-sm font-bold mb-2"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  for="email"
+                  class="block text-gray-700 text-sm font-bold mb-2"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your Email"
+                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+              <div class="mb-4">
+                <label
+                  for="message"
+                  class="block text-gray-700 text-sm font-bold mb-2"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Your Message"
+                  class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                ></textarea>
+              </div>
+              <div class="text-center">
+                <button
+                  type="submit"
+                  class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript to change profession -->
+    <script src="app.js" defer></script>
+  </body>
+</html>
